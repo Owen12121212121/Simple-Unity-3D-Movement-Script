@@ -101,21 +101,6 @@ public class PlayerController : MonoBehaviour
             rb.MoveRotation(rb.rotation * rightDeltaRotation);
         }
     }
-
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            jumping = false;
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Coin"))
-        {
-            coins++;
-            other.gameObject.GetComponent<AudioSource>().Play();
-            other.transform.position = new Vector3(0, 0, 512);
         }
     }
 
